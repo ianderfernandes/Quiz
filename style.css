@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    background: rgba(219, 223, 253, 1);
+}
+
 div h1 {
     text-align: center;
     margin: 50px 0 0 0;
@@ -13,6 +23,9 @@ section {
 }
 
 button {
+    background: none;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 40px;
     cursor: pointer;
     width: 450px;
     height: 80px;
@@ -21,7 +34,12 @@ button {
     border-radius: 50px;
 }
 
+button:hover {
+    font-size: 45px;
+    transform: scale(1.03);
+}
+
 img {
-    margin: 150px 0 0 180px;
+    margin: 150px 0 0 200px;
 }
 
