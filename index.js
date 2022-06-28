@@ -1,6 +1,38 @@
 // CONTADOR DAS PERSONALIDADES PARA O GRAFICO E RESPOSTA FINAL
 let contadores = [poupadorCompulsivo = 0, gastadorCompulsivo = 0, moneyMaker = 0, indiferente = 0, economista = 0, apostador = 0, preocupado = 0]
 //ARRAY DE OBJETOS COM AS PERGUNTAS(TITULO E ALTERNATIVAS)
+
+let resposta = [
+    {
+        nomePers: 'Poupador Compulsivo',
+        descPers: 'Você é tão frugal quanto eles vêm! Pechinchar é o seu nome do meio, e você está sempre procurando economizar dinheiro porque, em sua mente, dinheiro significa estabilidade e segurança para o futuro. Ao mesmo tempo, seus hábitos de poupança extrema também podem levar à hesitação quando se trata de gastar dinheiro. Em casos extremos, você pode até optar por abrir mão de algo que precisa para aumentar suas economias. Aprender a praticar a moderação pode ajudá-lo a alcançar seus objetivos financeiros e aproveitar o dinheiro pelo qual trabalhou tanto!'
+    },
+    {
+        nomePers: 'Gastador Compulsivo',
+        descPers: 'Você vê. Você gosta disso. Você quer isso. Você compra isso. Você tende a ser um grande gastador, mesmo quando seus amigos e familiares podem considerar uma compra desnecessária. E você não tem medo de se tratar. No seu caso, parece que o dinheiro pode comprar felicidade, especialmente quando você está se sentindo para baixo e fazer um pedido on-line instantaneamente melhora seu humor. Mas as compras podem rapidamente se tornar sua kriptonita se você não for cuidadoso - e não estamos falando apenas do remorso do comprador por um pedido on-line que deu errado. Você pode estar propenso a acumular quantias extremas de dívida, o que pode ser muito difícil de pagar. O orçamento permite que você tenha mais equilíbrio entre economizar e gastar - e pode até mesmo ajudá-lo a entender exatamente quanto você pode gastar em coisas "divertidas" todos os meses. Dias sem gastos uma ou duas vezes por semana também podem ajudá-lo a reduzir gastos desnecessários e dar ao seu cartão de crédito uma pausa muito necessária.'
+    },
+    {
+        nomePers: '"MoneyMaker" Fazedor de dinheiro compulsivo',
+        descPers: 'Para você, ganhar mais dinheiro = construir mais riqueza, e você certamente faz de ambos uma prioridade. Sua atitude em relação aos ganhos pode colocá-lo em um caminho muito forte (e lucrativo) para o sucesso financeiro. Mas você também dá um passo adiante e também pode acreditar que ganhar mais dinheiro é uma parte fundamental para ser feliz. Mas quando você chega a um ponto em que está um pouco envolvido demais na construção de sua riqueza, pode inadvertidamente negligenciar seus relacionamentos. Lembrar-se de que você está indo bem pode aliviar um pouco da pressão que você coloca em si mesmo para ganhar mais. O dinheiro é uma importante ferramenta de construção de riqueza, mas você também pode considerar usá-lo para reunir seus entes queridos - como, por meio de férias em família muito necessárias!'
+    },
+    {
+        nomePers: 'Indiferente ao dinheiro',
+        descPers: 'Você provavelmente não pensa muito em dinheiro - e quando pensa, pensar em tarefas como verificar sua pontuação de crédito ou investir só faz você torcer o nariz! Você pode até acreditar que o dinheiro não deve ser central para suas decisões na vida, e apenas uma quantia modesta é tudo o que você realmente precisa. Isso certamente pode ser uma mentalidade saudável, mas às vezes pode se tornar uma falta de cuidado quando se trata de gerenciamento básico de dinheiro – como não estar ciente de para onde seu dinheiro está indo ou quanto está sendo gasto. Começar pequeno, simplesmente anotando suas despesas mensais, suas dívidas e sua renda pode ajudá-lo a ter mais consciência de até onde sua renda pode levá-lo.'
+    },
+    {
+        nomePers: 'Economista',
+        descPers: 'Quando se trata de economizar dinheiro, você tende a ser bom em recortar os cupons, aplicar os códigos de desconto e guardar dinheiro em uma conta poupança. Mas às vezes, seu progresso é prejudicado quando você sente vontade de comprar, comprar, comprar! Você pode até ter notado que, quando faz uma compra compulsiva, muitas vezes acaba com itens com os quais realmente não se importa ou não são tão úteis quanto você pensou que seriam. Isso só deixa você se sentindo irritado ou até desapontado por ter atrapalhado seu progresso de salvamento. Quando você sentir vontade de fazer compras instantaneamente gratificantes, espere 24 horas antes de realmente clicar no botão de checkout. Você pode perceber que não quer mais o item, e isso impedirá que você continue a fazer ioiô entre economizar e gastar dinheiro.'
+    },
+    {
+        nomePers: 'Apostador',
+        descPers: 'Você é um tipo de pessoa de grande risco-grande-recompensa. Você tende a ser motivado pela emoção de assumir um risco (como em uma aposta ou investimento), mas também adora a ideia de lucrar com uma grande vitória. Em casos extremos, você pode até considerar pedir dinheiro emprestado de uma conta de aposentadoria ou um investimento apenas para arriscar em outra coisa. No entanto, quando o pêndulo oscila de ganhar para perder, você também pode ficar extremamente devastado se um grande risco não compensar. É importante perceber que você pode aproveitar as oportunidades e, ao mesmo tempo, estabelecer limites para si mesmo. Faça uma lista de itens não negociáveis (como sua conta de aposentadoria ou o fundo da faculdade do seu filho) e faça questão de nunca pedir emprestado contra eles.'
+    },
+    {
+        nomePers: 'Preocupado',
+        descPers: 'Você pode ter um ninho de ovos confortável guardado para si mesmo, mas também pode se preocupar muito com a possibilidade de perder seu dinheiro, muitas vezes em grau excessivo. Às vezes, você pode até não ter confiança quando se trata de gerenciar seu dinheiro. Pode ser útil para você ter conversas mais abertas e positivas sobre dinheiro com as pessoas em sua vida'
+    }
+]
+
 let perguntas = [
     {
         titulo: 'Quando se trata de orçamentar, qual das seguintes alternativas é mais compativel com você?',
@@ -107,54 +139,79 @@ function proximaPerg() {
     respostaFinal()
 }
 
-function respostaFinal(){
+function respostaFinal() {
     if (atualPos == perguntas.length) {
-        console.log(`Poupador Compulsivo: ${poupadorCompulsivo} 
-        Gastador Compulsivo: ${gastadorCompulsivo}
-        Money Maker: ${moneyMaker} 
-        Indiferente ao Dinheiro: ${indiferente} 
-        Economista: ${economista} 
-        Apostador: ${apostador} 
-        Preocupado: ${preocupado}
-        ${contadores}`)
-    } 
+        if(Math.max.apply(null, contadores) == contadores[0]) {
+            handleRes(resposta[0].nomePers, resposta[0].descPers)
+        } else if (Math.max.apply(null, contadores) == contadores[1]) {
+            console.log('Gastador Compulsivo')
+        } else if (Math.max.apply(null, contadores) == contadores[2]) {
+            console.log('Money Maker')
+        } else if (Math.max.apply(null, contadores) == contadores[3]) {
+            console.log('Indiferente')
+        } else if (Math.max.apply(null, contadores) == contadores[4]) {
+            console.log('Economista')
+        } else if (Math.max.apply(null, contadores) == contadores[5]) {
+            console.log('Apostador')
+        } else if (Math.max.apply(null, contadores) == contadores[6]) {
+            console.log('Preocupado')
+        }
+        console.log(Math.max.apply(null, contadores))
+    }
 }
 
 function checarResposta(user) {
     qatual = perguntas[atualPos]
     if (qatual.respostas[0] == user) {
-        poupadorCompulsivo++;
+        contadores[0]++;
     } else if (qatual.respostas[1] == user) {
-        gastadorCompulsivo++;
+        contadores[1]++;
     } else if (qatual.respostas[2] == user) {
-        moneyMaker++;
+        contadores[2]++;
     } else if (qatual.respostas[3] == user) {
-        indiferente++;
+        contadores[3]++;
     } else if (qatual.respostas[4] == user) {
-        economista++;
+        contadores[4]++;
     } else if (qatual.respostas[5] == user) {
-        apostador++;
+        contadores[5]++;
     } else if (qatual.respostas[6] == user) {
-        preocupado++;
+        contadores[6]++;
     }
+
     proximaPerg()
     criaPergunta(perguntas[atualPos])
 }
 
-;
-
+const title = document.getElementById('titulo')
 
 //CRIANDO A PERGUNTA 
 function criaPergunta(q) {
     //ADICIONANDO O TITULO
     qatual = 0
-    let tituloPergunta = document.getElementById('titulo')
-    tituloPergunta.textContent = q.titulo
+    title.textContent = q.titulo
     //ADICIONANDO AS ALTERNATIVAS
     let altPergunta = document.querySelectorAll('.alternativa')
     altPergunta.forEach(function (element, index) {
         element.textContent = q.alternativas[index];
     })
 }
+
+
+function handleRes(nome, descrição){
+    const main = document.querySelector('main')
+    title.innerText = `Sua Personalidade é: ${nome}`
+
+
+    const lista = document.querySelector('ul')
+    main.removeChild(lista)
+
+    const p = document.createElement('p')
+    p.classList.add('resposta')
+    p.innerText = `${descrição}`
+    main.appendChild(p)
+}
+
+
+
 
 comecar()
