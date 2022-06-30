@@ -5,11 +5,19 @@ let contadores = [poupadorCompulsivo = 0, gastadorCompulsivo = 0, moneyMaker = 0
 let resposta = [
     {
         nomePers: 'Poupador Compulsivo',
+<<<<<<< HEAD
         descPers: 'Você é tão frugal quanto eles veem! Pechinchar é o seu nome do meio, e você está sempre procurando economizar dinheiro porque, em sua mente, dinheiro significa estabilidade e segurança para o futuro. Ao mesmo tempo, seus hábitos de poupança extrema também podem levar à hesitação quando se trata de gastar dinheiro. Em casos extremos, você pode até optar por abrir mão de algo que precisa para aumentar suas economias. Aprender a praticar a moderação pode ajudá-lo a alcançar seus objetivos financeiros e aproveitar o dinheiro pelo qual trabalhou tanto!'
     },
     {
         nomePers: 'Gastador Compulsivo',
         descPers: 'Você vê. Você gosta disso. Você quer isso. Você compra isso. Você tende a ser um grande gastador, mesmo quando seus amigos e familiares podem considerar uma compra desnecessária. E você não tem medo de se tratar. No seu caso, parece que o dinheiro pode comprar felicidade, especialmente quando você está se sentindo para baixo e fazer um pedido on-line instantaneamente melhora seu humor. Mas as compras podem rapidamente se tornar sua kriptonita se você não for cuidadoso, e não estamos falando apenas do remorso do comprador por um pedido on-line que deu errado. Você pode estar propenso a acumular quantias extremas de dívida, o que pode ser muito difícil de pagar. O orçamento permite que você tenha mais equilíbrio entre economizar e gastar - e pode até mesmo ajudá-lo a entender exatamente quanto você pode gastar em coisas "divertidas" todos os meses. Dias sem gastos uma ou duas vezes por semana também podem ajudá-lo a reduzir gastos desnecessários e dar ao seu cartão de crédito uma pausa muito necessária.'
+=======
+        descPers: 'Você é tão frugal quanto eles vêm! Pechinchar é o seu nome do meio, e você está sempre procurando economizar dinheiro porque, em sua mente, dinheiro significa estabilidade e segurança para o futuro. Ao mesmo tempo, seus hábitos de poupança extrema também podem levar à hesitação quando se trata de gastar dinheiro. Em casos extremos, você pode até optar por abrir mão de algo que precisa para aumentar suas economias. Aprender a praticar a moderação pode ajudá-lo a alcançar seus objetivos financeiros e aproveitar o dinheiro pelo qual trabalhou tanto!'
+    },
+    {
+        nomePers: 'Gastador Compulsivo',
+        descPers: 'Você vê. Você gosta disso. Você quer isso. Você compra isso. Você tende a ser um grande gastador, mesmo quando seus amigos e familiares podem considerar uma compra desnecessária. E você não tem medo de se tratar. No seu caso, parece que o dinheiro pode comprar felicidade, especialmente quando você está se sentindo para baixo e fazer um pedido on-line instantaneamente melhora seu humor. Mas as compras podem rapidamente se tornar sua kriptonita se você não for cuidadoso - e não estamos falando apenas do remorso do comprador por um pedido on-line que deu errado. Você pode estar propenso a acumular quantias extremas de dívida, o que pode ser muito difícil de pagar. O orçamento permite que você tenha mais equilíbrio entre economizar e gastar - e pode até mesmo ajudá-lo a entender exatamente quanto você pode gastar em coisas "divertidas" todos os meses. Dias sem gastos uma ou duas vezes por semana também podem ajudá-lo a reduzir gastos desnecessários e dar ao seu cartão de crédito uma pausa muito necessária.'
+>>>>>>> f5ab62acd601683395c6e827ef7d2a817ed0a5d5
     },
     {
         nomePers: '"MoneyMaker" Fazedor de dinheiro compulsivo',
@@ -139,6 +147,7 @@ function proximaPerg() {
     respostaFinal()
 }
 
+<<<<<<< HEAD
 const title = document.getElementById('titulo')
 
 function resultado(nome, descrição){
@@ -175,6 +184,24 @@ function respostaFinal() {
             resultado(resposta[5].nomePers, resposta[5].descPers)
         } else if (Math.max.apply(null, contadores) == contadores[6]) {
             resultado(resposta[6].nomePers, resposta[6].descPers)
+=======
+function respostaFinal() {
+    if (atualPos == perguntas.length) {
+        if(Math.max.apply(null, contadores) == contadores[0]) {
+            handleRes(resposta[0].nomePers, resposta[0].descPers)
+        } else if (Math.max.apply(null, contadores) == contadores[1]) {
+            console.log('Gastador Compulsivo')
+        } else if (Math.max.apply(null, contadores) == contadores[2]) {
+            console.log('Money Maker')
+        } else if (Math.max.apply(null, contadores) == contadores[3]) {
+            console.log('Indiferente')
+        } else if (Math.max.apply(null, contadores) == contadores[4]) {
+            console.log('Economista')
+        } else if (Math.max.apply(null, contadores) == contadores[5]) {
+            console.log('Apostador')
+        } else if (Math.max.apply(null, contadores) == contadores[6]) {
+            console.log('Preocupado')
+>>>>>>> f5ab62acd601683395c6e827ef7d2a817ed0a5d5
         }
         console.log(Math.max.apply(null, contadores))
     }
@@ -202,6 +229,11 @@ function checarResposta(user) {
     criaPergunta(perguntas[atualPos])
 }
 
+<<<<<<< HEAD
+=======
+const title = document.getElementById('titulo')
+
+>>>>>>> f5ab62acd601683395c6e827ef7d2a817ed0a5d5
 //CRIANDO A PERGUNTA 
 function criaPergunta(q) {
     //ADICIONANDO O TITULO
@@ -213,5 +245,23 @@ function criaPergunta(q) {
         element.textContent = q.alternativas[index];
     })
 }
+
+
+function handleRes(nome, descrição){
+    const main = document.querySelector('main')
+    title.innerText = `Sua Personalidade é: ${nome}`
+
+
+    const lista = document.querySelector('ul')
+    main.removeChild(lista)
+
+    const p = document.createElement('p')
+    p.classList.add('resposta')
+    p.innerText = `${descrição}`
+    main.appendChild(p)
+}
+
+
+
 
 comecar()
