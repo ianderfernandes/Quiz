@@ -5,16 +5,20 @@
 
 body {
     font-family: 'Varela Round', sans-serif;
-    background: rgba(219, 223, 253, 1);
+    background: #06283D;
+    color: #DFF6FF;
 }
 
 div h1 {
     text-align: center;
     margin: 50px 0 0 0;
+    font-size: 40px;
+    text-decoration: underline;
 }
 
 div h2 {
     text-align: center;
+    font-size: 28px;
     margin: 50px 0 0 0;
 }
 
@@ -32,6 +36,8 @@ button {
     margin: 100px 0 0 0;
     text-transform: uppercase;
     border-radius: 50px;
+    border-color: #47B5FF;
+    color: #DFF6FF;
 }
 
 button:hover {
@@ -42,4 +48,3 @@ button:hover {
 img {
     margin: 150px 0 0 200px;
 }
-
