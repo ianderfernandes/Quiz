@@ -71,8 +71,8 @@ let perguntas = [
     {
         titulo: 'Qual destes você está mais propenso a comprar?',
         alternativas: ['Um produto chamativo que viu em um anúncio do Instagram.',
-            'Um curso on-line que pode te ensinar uma habilidade para ganhar mais dinheiro.',
             'Alguns produtos de diferentes lojas, porque uma vez que começo a comprar é difícil parar.',
+            'Um curso on-line que pode te ensinar uma habilidade para ganhar mais dinheiro.',
             'Nada porque cada real conta em uma emergência.',
             'Algo pequeno que já tinha visto ou planejado.',
             'O que sentir vontade de comprar no momento.',
@@ -148,7 +148,7 @@ function proximaPerg() {
 const title = document.getElementById('titulo')
 
 //FUNÇÃO PARA EXIBIR O RESULTADO FINAL
-function resultado(nome, descrição){
+function resultado(nome, descrição) {
     const main = document.querySelector('main')
     title.innerText = `Sua Personalidade é:`
 
@@ -168,7 +168,7 @@ function resultado(nome, descrição){
     const btn = document.createElement('button')
     btn.classList.add('btnFinal')
     btn.innerText = 'Voltar ao inicio'
-    btn.addEventListener('click', function(){
+    btn.addEventListener('click', function () {
         window.location.href = "index.html"
     })
     main.appendChild(btn)
@@ -177,7 +177,7 @@ function resultado(nome, descrição){
 //FUNÇÇÃO PARA CALCULAR O RESULTADO FINAL
 function respostaFinal() {
     if (atualPos == perguntas.length) {
-        if(Math.max.apply(null, contadores) == contadores[0]) {
+        if (Math.max.apply(null, contadores) == contadores[0]) {
             resultado(resposta[0].nomePers, resposta[0].descPers)
         } else if (Math.max.apply(null, contadores) == contadores[1]) {
             resultado(resposta[1].nomePers, resposta[1].descPers)
