@@ -1,7 +1,7 @@
-// CONTADOR DAS PERSONALIDADES PARA O GRAFICO E RESPOSTA FINAL
+//CONTADOR DAS PERSONALIDADES PARA O GRAFICO E RESPOSTA FINAL
 let contadores = [poupadorCompulsivo = 0, gastadorCompulsivo = 0, moneyMaker = 0, indiferente = 0, economista = 0, apostador = 0, preocupado = 0]
 
-//ARRAY DE OBJETOS COM AS PERGUNTAS(TITULO E ALTERNATIVAS)
+//ARRAY DE OBJETOS COM AS RESPOSTAS FINAIS(NOME E DESCRIÇÃO)
 let resposta = [
     {
         nomePers: 'Poupador Compulsivo',
@@ -33,96 +33,100 @@ let resposta = [
     }
 ]
 
+//ARRAY DE OBJETOS COM AS PERGUNTAS(TITULO E ALTERNATIVAS)
 let perguntas = [
     {
-        titulo: 'Quando se trata de orçamentar, qual das seguintes alternativas é mais compativel com você?',
-        alternativas: ['Segue o seu orçamento à risca.',
-            'Você gasta no que te faz feliz, sem se importar em fazer um orçamento dos seus gastos. ',
-            'Você sempre pensou que orçamentar fosse apenas para pessoas que não ganham muito dinheiro.',
-            'Pensar sobre orçamento de gastos faz os seus olhos revirar.',
-            'Você orçamenta para suas necessidades mas gasta de mais de qualquer jeito.',
-            'Você não realiza orçamento porquê você não sabe como começa e isto é o suficiente para desencoraja-lo.', 'Para você orçamentos são restrigentes, e você quer ser livre para usar o seu dinheiro quando um oportunidade aparece.'],
+        titulo: 'Quando se trata de orçamentar, qual das seguintes alternativas é mais compatível com você?',
+        alternativas: ['Sigo o meu orçamento à risca.',
+            'Gasto no que me faz feliz, sem me importar em fazer um orçamento dos meus gastos.',
+            'Sempre pensei que gerenciar gastos fosse apenas para pessoas que não ganham muito dinheiro.',
+            'Pensar sobre o orçamento de gastos faz os meus olhos revirarem.',
+            'Orçamento de acordo com minhas necessidades, mas gasto de mais de qualquer forma.',
+            'Não realizo orçamento por que eu não faço ideia de como começar e isto é o suficiente para me desencorajar.',
+            'Para mim os planejamentos de gastos são restritos, e eu prefiro ser livre para usar o meu dinheiro quando uma oportunidade aparece.'],
         respostas: [0, 1, 2, 3, 4, 5, 6]
     },
     {
-        titulo: 'Quando se trata de gerenciar seu dinheiro, qual das seguintes opções você tem mais probabilidade de fazer? ',
-        alternativas: ['Economiza o máximo que puder porque se sente culpado quando gasta.',
-            'Mima-se ou compra um belo presente para outra pessoa.',
-            'Usa-o para iniciar uma atividade secundária que pode lhe render ainda mais dinheiro.',
-            'Apenas compra o necessário.',
-            'Economize a maior parte, mas provavelmente gasta tudo em algumas semanas.',
-            'Invista em algo que pode lhe dar um grande retorno.',
-            'Economize o máximo que pode, pois você não sabe quando uma emergência vai acontecer.'],
+        titulo: 'Quando se trata de gerenciar seu dinheiro, qual das seguintes opções você tem mais probabilidade de fazer?',
+        alternativas: ['Economizo o máximo que posso porque me sinto culpado quando gasto.',
+            'Prefere se presentear ou comprar um belo presente para outra pessoa.',
+            'Usa-o para iniciar uma atividade secundária que pode me render ainda mais dinheiro.',
+            'Apenas compro o necessário.',
+            'Economizo a maior parte, mas provavelmente irei gastar tudo em algumas semanas.',
+            'Invisto em algo que pode me dar um grande retorno.',
+            'Economizo o máximo que posso, pois não sei quando uma emergência vai acontecer.'],
         respostas: [0, 1, 2, 3, 4, 5, 6]
     },
     {
-        titulo: 'Viva! Você acabou de ganhar $ 1.000 em um jogo de raspadinha. O que você faz com o dinheiro?',
-        alternativas: ['Salve tudo sem motivo específico.',
-            'Saia para jantar com seus amigos e pague a conta.',
-            'Use alguns de seus ganhos para comprar outro jogo de raspadinha para tentar ganhar mais.',
-            'Economize ou invista metade e doe o restante para caridade.',
-            'Você o salvaria hoje apenas para acabar comprando algo com ele em algumas semanas.',
-            'Use-o para comprar ainda mais criptomoedas.',
-            'Salve-o e espere que seja útil para uma emergência.'],
+        titulo: 'Viva! Você acabou de ganhar 1.000 R$ em um jogo de raspadinha. O que você faz com o dinheiro?',
+        alternativas: ['Guardo tudo sem motivo específico.',
+            'Saio para jantar com os amigos e pago a conta.',
+            'Uso alguns dos meus ganhos para comprar outro jogo de raspadinha para tentar ganhar mais.',
+            'Economizo o dinheiro ou invisto metade e doou o restante para caridade.',
+            'Pouparia por um tempo, mas acabaria gastando em algo nas semanas seguintes.',
+            'Uso para comprar alguma ação ou criptomoeda.',
+            'Guardo o dinheiro na esperança de que seja útil para uma futura emergência.'],
         respostas: [0, 1, 2, 3, 4, 5, 6]
     },
     {
         titulo: 'Qual destes você está mais propenso a comprar?',
-        alternativas: ['Um novo produto caro que você viu em um anúncio do Instagram.',
-            'Um curso on-line que pode ensinar uma habilidade que o ajudará a ganhar mais dinheiro.',
-            'Alguns itens diferentes de lojas diferentes, porque uma vez que você começa, é difícil parar.',
+        alternativas: ['Um produto chamativo que viu em um anúncio do Instagram.',
+            'Um curso on-line que pode te ensinar uma habilidade para ganhar mais dinheiro.',
+            'Alguns produtos de diferentes lojas, porque uma vez que começo a comprar é difícil parar.',
             'Nada porque cada real conta em uma emergência.',
-            'Algo pequeno que você já planejou.',
-            'O que você sentir vontade de comprar no momento.',
+            'Algo pequeno que já tinha visto ou planejado.',
+            'O que sentir vontade de comprar no momento.',
+            'Algo mais seguro como ações ou uma propriedade de investimento.',
             'Uma propriedade de investimento.'],
         respostas: [0, 1, 2, 3, 4, 5, 6]
     },
     {
         titulo: 'Com que frequência você se preocupa com dinheiro?',
-        alternativas: ['Não com muita frequência, mas você adoraria economizar mais.',
-            'Você nunca se preocupa com dinheiro.',
-            'Você não se preocupe porque você tem muitas fontes de renda.',
-            'Você não se preocupa com dinheiro, mas lhe disseram que você deve evitar gastar demais.',
-            'Você só começa a se preocupar quando gasta suas economias em algo que acaba não gostando.',
-            'Você se preocupa constantemente e espera ter o suficiente para toda a sua vida.',
-            'Você se preocupa muito quando perde dinheiro.'],
+        alternativas: ['Não com muita frequência, mas adoraria economizar mais.',
+            'Nunca me preocupo com dinheiro.',
+            'Não me preocupo muito, pois tenho mais de uma fonte de renda.',
+            'Não me preocupo com dinheiro, mas já me disseram que devo evitar gastar demais.',
+            'Só começo a me preocupar, quando eu gasto minhas economias em algo que acabo não gostando.',
+            'Me preocupo constantemente e espero ter o suficiente para toda a minha vida.',
+            'Me preocupo bastante quando perco dinheiro.'],
         respostas: [0, 1, 2, 3, 4, 5, 6]
     },
     {
         titulo: 'Em caso de emergência financeira...',
-        alternativas: ['...você poderia usar parte do dinheiro que economizou para cobrir quaisquer custos.',
-            '...você provavelmente contaria com a família para cobrir o custo ou fazer um empréstimo pessoal.',
-            '...você provavelmente poderia usar uma de suas fontes de renda para cobrir a emergência.',
-            '...você teria que evitar fazer grandes compras por um tempo.',
-            '...você provavelmente teria o suficiente para cobrir a emergência, mas se não, você descobriria algo.',
-            '...você provavelmente teria algum dinheiro para cobrir uma emergência, mas prefere arriscar em investir para dobrar seu dinheiro.',
-            '...você não sabe se tem dinheiro suficiente para uma emergência, mas espera que isso ajude.'],
+        alternativas: ['...Usaria parte do dinheiro que economizei para cobrir quaisquer custos.',
+            '...Provavelmente contaria com a família para cobrir o custo ou fazer um empréstimo pessoal.',
+            '...Provavelmente poderia usar uma das minhas fontes de renda para cobrir a emergência.',
+            '...Teria que evitar fazer grandes compras por um tempo.',
+            '...Provavelmente teria o suficiente para cobrir a emergência, mas caso não, pediria emprestado a algum amigo.',
+            '...Provavelmente teria algum dinheiro para cobrir uma emergência, mas prefere arriscar em investir algo para dobrar seu dinheiro.',
+            '...Não saberia se teria dinheiro suficiente para uma emergência.'],
         respostas: [0, 1, 2, 3, 4, 5, 6]
     },
     {
         titulo: 'Qual é a coisa mais importante para você quando se trata de seu futuro financeiro?',
-        alternativas: ['Ter dinheiro suficiente economizado para que você se sinta seguro.',
-            'Você nunca realmente pensou sobre isso.',
+        alternativas: ['Ter dinheiro suficiente economizado para que me sinta seguro.',
+            'Não penso frequentemente sobre isso.',
             'Sempre ser capaz de ganhar mais dinheiro.',
-            'Ter o suficiente para cobrir suas necessidades básicas, e é isso.',
-            'Ter o suficiente para cobrir suas necessidades, mas também o suficiente para gastar com o que deseja.',
-            'Sempre em uma situação positiva com seu dinheiro.',
-            'Espera que seu dinheiro seja suficiente para cuidar de você na aposentadoria e emergências.'],
+            'Ter o suficiente para cobrir minhas necessidades básicas, e é isso.',
+            'Ter o suficiente para cobrir minhas necessidades, mas também o suficiente para gastar com o que desejo.',
+            'Sempre possuir uma relação positiva com o dinheiro.',
+            'Espero possuir dinheiro suficiente para me cuidar na aposentadoria ou em emergências.'],
         respostas: [0, 1, 2, 3, 4, 5, 6]
     },
     {
         titulo: 'E, em geral, o que você pensa sobre dinheiro?',
-        alternativas: ['É uma ferramenta que pode ajudá-lo a alcançar a liberdade financeira se usada com cuidado.',
-            'Ele oferece coisas que podem torná-lo mais feliz e aproximá-lo de amigos e familiares.',
-            'É uma ferramenta que pode se acumular e torná-lo mais rico se você souber como usá-la.',
-            'Ele ajuda você a satisfazer suas necessidades básicas.',
-            'É uma almofada necessária, especialmente quando você se aposenta e ainda precisa de uma renda.',
-            'Pode render dividendos se você investir sabiamente; grande risco = grande recompensa.',
-            'É ótimo poupá-lo, mas você também deve usá-lo para comprar o que deseja.'],
+        alternativas: ['Penso que é uma ferramenta que pode ajudar a alcançar a liberdade financeira se usada com cuidado.',
+            'Ele pode oferecer coisas que podem me tornar mais feliz e me aproximar de amigos e familiares.',
+            'É uma ferramenta que pode se acumular e me tornar mais rico se usado de maneira correta.',
+            'É uma ferramenta que me ajuda a satisfazer minhas necessidades básicas.',
+            'É uma “mão-na-roda”, especialmente quando se aposenta e ainda precisa de uma renda.',
+            'Pode render dividendos se investir sabiamente; grande risco = grande recompensa.',
+            'É ótimo poupar, mas também usaria para comprar o que desejo.'],
         respostas: [0, 1, 2, 3, 4, 5, 6]
     }
 ]
 
+//FUNÇÃO QUE CAPTURA AS ALTERNATIVAS DA PERGUNTA
 function comecar() {
     atualPos = 0;
     let altPergunta = document.querySelectorAll('.alternativa')
@@ -138,10 +142,12 @@ function comecar() {
 function proximaPerg() {
     atualPos++;
     respostaFinal()
+
 }
 
 const title = document.getElementById('titulo')
 
+//FUNÇÃO PARA EXIBIR O RESULTADO FINAL
 function resultado(nome, descrição){
     const main = document.querySelector('main')
     title.innerText = `Sua Personalidade é:`
@@ -158,8 +164,17 @@ function resultado(nome, descrição){
     p.classList.add('resposta')
     p.innerText = `${descrição}`
     main.appendChild(p)
+
+    const btn = document.createElement('button')
+    btn.classList.add('btnFinal')
+    btn.innerText = 'Voltar ao inicio'
+    btn.addEventListener('click', function(){
+        window.location.href = "index.html"
+    })
+    main.appendChild(btn)
 }
 
+//FUNÇÇÃO PARA CALCULAR O RESULTADO FINAL
 function respostaFinal() {
     if (atualPos == perguntas.length) {
         if(Math.max.apply(null, contadores) == contadores[0]) {
@@ -180,7 +195,7 @@ function respostaFinal() {
     }
 }
 
-
+//FUNÇÃO QUE CHECA QUAL A RESPOSTA DO USUÁRIO NAS ALTERNATIVAS  
 function checarResposta(user) {
     qatual = perguntas[atualPos]
     if (qatual.respostas[0] == user) {
@@ -203,7 +218,7 @@ function checarResposta(user) {
     criaPergunta(perguntas[atualPos])
 }
 
-//CRIANDO A PERGUNTA 
+//FUNÇÃO PARA CRIAR A PERGUNTA 
 function criaPergunta(q) {
     //ADICIONANDO O TITULO
     qatual = 0
